@@ -21,7 +21,7 @@ module RspecApiDocumentation
     end
 
     def response_body
-      if response_content_type =~ /application\/json/
+      if response_content_type =~ /application\/(vnd\.api\+)?json/
         begin
           json = JSON.pretty_generate(JSON.parse(last_response.body))
         rescue JSON::ParserError
